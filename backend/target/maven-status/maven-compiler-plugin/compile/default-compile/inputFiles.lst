@@ -1,1 +1,11 @@
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/backend/BackendApplication.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/common/entity/BaseEntity.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/common/response/ApiResponse.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/config/JpaAuditConfig.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/exception/GlobalExceptionHandler.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/exception/ResourceNotFoundException.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/dto/UserResponseDto.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/entity/Role.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/entity/User.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/mapper/UserMapper.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/repository/UserRepository.java

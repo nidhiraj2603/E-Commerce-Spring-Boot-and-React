@@ -19,10 +19,12 @@ public class TestController {
     public String generateToken(@RequestParam String email) {
         return jwtService.generateToken(email);
     }
+
     @GetMapping("/extract")
     public String extract(@RequestParam String token) {
         return jwtService.extractUsername(token);
     }
+
     @GetMapping("/validate")
     public boolean validate(@RequestParam String token) {
         return jwtService.isTokenValid(token);

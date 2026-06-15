@@ -16,13 +16,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ApiResponse<UserResponseDto> createUser(
-            @Valid @RequestBody CreateUserRequest request) {
+    public ApiResponse<UserResponseDto> createUser(@Valid @RequestBody CreateUserRequest request) {
 
-        return ApiResponse.<UserResponseDto>builder()
-                .success(true)
-                .message("User created successfully")
-                .data(userService.createUser(request))
-                .build();
+        return ApiResponse.<UserResponseDto>builder().success(true).message("User created successfully").data(userService.createUser(request)).build();
     }
 }

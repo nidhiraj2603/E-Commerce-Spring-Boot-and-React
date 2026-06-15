@@ -22,50 +22,31 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthResponse register(RegisterRequest request) {
 
-        if(userRepository.findByEmail(request.getEmail()).isPresent()) {
+        if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new RuntimeException("Email already exists");
         }
 
-        User user = User.builder()
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .email(request.getEmail())
-                .password(
-                        passwordEncoder.encode(
-                                request.getPassword()
-                        )
-                )
-                .role(Role.CUSTOMER)
-                .build();
+        User user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName()).email(request.getEmail()).password(passwordEncoder.encode(request.getPassword())).role(Role.CUSTOMER).build();
 
         userRepository.save(user);
 
-        String token =jwtService.generateToken(user.getEmail());
+        String token = jwtService.generateToken(user.getEmail());
 
-        return new AuthResponse(token);    
+        return new AuthResponse(token);
     }
 
     @Override
     public AuthResponse login(LoginRequest request) {
 
-        User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() ->
-                        new RuntimeException("Invalid email or password"));
+        User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new RuntimeException("Invalid email or password"));
 
-        boolean isPasswordValid =
-                passwordEncoder.matches(
-                        request.getPassword(),
-                        user.getPassword()
-                );
+        boolean isPasswordValid = passwordEncoder.matches(request.getPassword(), user.getPassword());
 
         if (!isPasswordValid) {
             throw new RuntimeException("Invalid email or password");
         }
 
-        String token =
-                jwtService.generateToken(
-                        user.getEmail()
-                );
+        String token = jwtService.generateToken(user.getEmail());
 
         return new AuthResponse(token);
     }

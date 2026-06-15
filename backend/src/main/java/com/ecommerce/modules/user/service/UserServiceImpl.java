@@ -21,13 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto createUser(CreateUserRequest request) {
 
-        User user = User.builder()
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.CUSTOMER)
-                .build();
+        User user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName()).email(request.getEmail()).password(passwordEncoder.encode(request.getPassword())).role(Role.CUSTOMER).build();
 
         User savedUser = userRepository.save(user);
 

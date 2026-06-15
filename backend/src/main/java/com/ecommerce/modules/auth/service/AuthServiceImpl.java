@@ -1,6 +1,7 @@
 package com.ecommerce.modules.auth.service;
 
 import com.ecommerce.modules.auth.dto.AuthResponse;
+import com.ecommerce.modules.auth.dto.LoginRequest;
 import com.ecommerce.modules.auth.dto.RegisterRequest;
 import com.ecommerce.modules.auth.jwt.JwtService;
 import com.ecommerce.modules.user.entity.Role;
@@ -42,5 +43,30 @@ public class AuthServiceImpl implements AuthService {
         String token =jwtService.generateToken(user.getEmail());
 
         return new AuthResponse(token);    
+    }
+
+    @Override
+    public AuthResponse login(LoginRequest request) {
+
+        User user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() ->
+                        new RuntimeException("Invalid email or password"));
+
+        boolean isPasswordValid =
+                passwordEncoder.matches(
+                        request.getPassword(),
+                        user.getPassword()
+                );
+
+        if (!isPasswordValid) {
+            throw new RuntimeException("Invalid email or password");
+        }
+
+        String token =
+                jwtService.generateToken(
+                        user.getEmail()
+                );
+
+        return new AuthResponse(token);
     }
 }

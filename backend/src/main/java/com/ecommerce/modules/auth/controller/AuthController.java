@@ -1,6 +1,7 @@
 package com.ecommerce.modules.auth.controller;
 
 import com.ecommerce.modules.auth.dto.AuthResponse;
+import com.ecommerce.modules.auth.dto.LoginRequest;
 import com.ecommerce.modules.auth.dto.RegisterRequest;
 import com.ecommerce.modules.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -18,5 +19,11 @@ public class AuthController {
             @RequestBody RegisterRequest request) {
 
         return authService.register(request);
+    }
+    @PostMapping("/login")
+    public AuthResponse login(
+            @RequestBody LoginRequest request) {
+    
+        return authService.login(request);
     }
 }

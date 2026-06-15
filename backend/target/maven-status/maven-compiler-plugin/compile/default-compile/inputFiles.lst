@@ -16,6 +16,7 @@
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/auth/service/AuthServiceImpl.java
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/controller/UserController.java
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/dto/CreateUserRequest.java
+/Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/dto/LoginRequest.java
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/dto/UserResponseDto.java
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/entity/Role.java
 /Users/theakashmistry/Nidhi/E-Commerce-Spring-Boot-and-React/backend/src/main/java/com/ecommerce/modules/user/entity/User.java

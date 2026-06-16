@@ -1,10 +1,9 @@
 package com.ecommerce.modules.auth.controller;
 
+import com.ecommerce.modules.auth.jwt.JwtService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.ecommerce.modules.auth.jwt.JwtService;
 
 @RestController
 public class TestController {
@@ -25,8 +24,8 @@ public class TestController {
         return jwtService.extractUsername(token);
     }
 
-    @GetMapping("/validate")
-    public boolean validate(@RequestParam String token) {
-        return jwtService.isTokenValid(token);
-    }
+//    @GetMapping("/validate")
+//    public boolean validate(@RequestParam String token) {
+//        return jwtService.isTokenValid(token, );
+//    }
 }

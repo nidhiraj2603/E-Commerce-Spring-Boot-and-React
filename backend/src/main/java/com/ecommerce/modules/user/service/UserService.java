@@ -6,4 +6,6 @@ import com.ecommerce.modules.user.dto.UserResponseDto;
 public interface UserService {
 
     UserResponseDto createUser(CreateUserRequest request);
+
+    UserResponseDto getCurrentUser(String email);
 }

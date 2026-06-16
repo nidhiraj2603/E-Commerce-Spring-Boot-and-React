@@ -1,6 +1,8 @@
 com/ecommerce/config/ApplicationConfig.class
 com/ecommerce/modules/auth/service/AuthServiceImpl.class
 com/ecommerce/modules/user/entity/User$UserBuilder.class
+com/ecommerce/modules/auth/controller/TestController.class
+com/ecommerce/modules/auth/jwt/JwtAuthenticationFilter.class
 com/ecommerce/modules/auth/jwt/JwtServiceImpl.class
 com/ecommerce/modules/user/repository/UserRepository.class
 com/ecommerce/modules/user/entity/Role.class
@@ -18,6 +20,7 @@ com/ecommerce/modules/auth/dto/RegisterRequest.class
 com/ecommerce/modules/auth/jwt/JwtService.class
 com/ecommerce/modules/user/dto/CreateUserRequest.class
 com/ecommerce/modules/user/service/UserServiceImpl.class
+com/ecommerce/modules/auth/service/CustomUserDetailsService.class
 com/ecommerce/modules/user/mapper/UserMapper.class
 com/ecommerce/modules/auth/service/AuthService.class
 com/ecommerce/modules/user/dto/LoginRequest.class

@@ -3,6 +3,7 @@ package com.ecommerce.modules.auth.service;
 import com.ecommerce.modules.auth.entity.RefreshToken;
 import com.ecommerce.modules.auth.repository.RefreshTokenRepository;
 import com.ecommerce.modules.user.entity.User;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,7 @@ public class RefreshTokenServiceImpl implements RefreshTokenService {
     }
 
     @Override
+    @Transactional
     public RefreshToken verifyExpiration(String token) {
 
         RefreshToken refreshToken = repository.findByToken(token).orElseThrow(() -> new RuntimeException("Refresh token not found"));
@@ -37,5 +39,12 @@ public class RefreshTokenServiceImpl implements RefreshTokenService {
         }
 
         return refreshToken;
+    }
+
+    @Override
+    @Transactional
+    public void deleteByUserId(Long userId) {
+
+        repository.deleteByUserId(userId);
     }
 }
